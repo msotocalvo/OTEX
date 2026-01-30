@@ -12,23 +12,35 @@ class TestDataModuleImports:
 
     def test_cmems_module_exists(self):
         """CMEMS module should exist."""
-        from otex.data import cmems
-        assert cmems is not None
+        try:
+            from otex.data import cmems
+            assert cmems is not None
+        except ImportError as e:
+            if 'copernicusmarine' in str(e):
+                pytest.skip("copernicusmarine not installed")
+            raise
 
     def test_netcdf_module_exists(self):
         """NetCDF module should exist."""
-        import os
         try:
             from otex.data import netcdf
             assert netcdf is not None
+        except ImportError as e:
+            if 'copernicusmarine' in str(e):
+                pytest.skip("copernicusmarine not installed")
+            raise
         except FileNotFoundError:
-            # Module tries to load CSV at import - skip if file not present
             pytest.skip("NetCDF module requires data files not present in test environment")
 
     def test_multi_depth_module_exists(self):
         """Multi-depth module should exist."""
-        from otex.data import multi_depth
-        assert multi_depth is not None
+        try:
+            from otex.data import multi_depth
+            assert multi_depth is not None
+        except ImportError as e:
+            if 'copernicusmarine' in str(e):
+                pytest.skip("copernicusmarine not installed")
+            raise
 
 
 class TestDataConfig:
@@ -48,7 +60,6 @@ class TestDataConfig:
         """HYCOM configuration should be correct."""
         from otex.config import DataConfig, OTEXConfig
 
-        # Use DataConfig directly to test HYCOM without triggering fluid creation
         data_config = DataConfig(source='HYCOM')
         config = OTEXConfig(data=data_config)
         legacy = config.to_legacy_dict()
@@ -121,7 +132,6 @@ class TestTemperatureDataStructures:
         delta_T = T_WW - T_CW
 
         assert np.all(delta_T > 0)
-        # OTEC typically needs ΔT > 20°C
         assert np.all(delta_T > 15)
 
     def test_design_temperatures_shape(self, sample_temperatures):
@@ -129,8 +139,8 @@ class TestTemperatureDataStructures:
         T_WW_design = sample_temperatures['T_WW_design']
         T_CW_design = sample_temperatures['T_CW_design']
 
-        assert T_WW_design.shape[0] == 3  # min, med, max
-        assert T_CW_design.shape[0] == 3  # max, med, min (inverted)
+        assert T_WW_design.shape[0] == 3
+        assert T_CW_design.shape[0] == 3
 
 
 class TestCMEMSFunctions:
@@ -138,15 +148,30 @@ class TestCMEMSFunctions:
 
     def test_download_data_function_exists(self):
         """download_data function should exist."""
-        from otex.data.cmems import download_data
-        assert callable(download_data)
+        try:
+            from otex.data.cmems import download_data
+            assert callable(download_data)
+        except ImportError as e:
+            if 'copernicusmarine' in str(e):
+                pytest.skip("copernicusmarine not installed")
+            raise
 
     def test_data_processing_function_exists(self):
         """data_processing function should exist."""
-        from otex.data.cmems import data_processing
-        assert callable(data_processing)
+        try:
+            from otex.data.cmems import data_processing
+            assert callable(data_processing)
+        except ImportError as e:
+            if 'copernicusmarine' in str(e):
+                pytest.skip("copernicusmarine not installed")
+            raise
 
     def test_load_temperatures_function_exists(self):
         """load_temperatures function should exist."""
-        from otex.data.cmems import load_temperatures
-        assert callable(load_temperatures)
+        try:
+            from otex.data.cmems import load_temperatures
+            assert callable(load_temperatures)
+        except ImportError as e:
+            if 'copernicusmarine' in str(e):
+                pytest.skip("copernicusmarine not installed")
+            raise
