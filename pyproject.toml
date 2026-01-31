@@ -47,6 +47,9 @@ dependencies = [
 
 [project.optional-dependencies]
 coolprop = ["CoolProp>=6.4"]
+uncertainty = [
+    "SALib>=1.4.0",
+]
 dev = [
     "pytest>=7.0",
     "pytest-cov>=4.0",
@@ -61,6 +64,7 @@ docs = [
 ]
 all = [
     "CoolProp>=6.4",
+    "SALib>=1.4.0",
     "pytest>=7.0",
     "pytest-cov>=4.0",
 ]
