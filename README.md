@@ -12,17 +12,32 @@
   <a href="https://github.com/msotocalvo/OTEX/actions/workflows/workflow.yml">
     <img src="https://github.com/msotocalvo/OTEX/actions/workflows/workflow.yml/badge.svg" alt="CI">
   </a>
+  <a href="https://codecov.io/gh/msotocalvo/OTEX">
+    <img src="https://codecov.io/gh/msotocalvo/OTEX/branch/main/graph/badge.svg" alt="codecov">
+  </a>
+  <a href="https://otex.readthedocs.io">
+    <img src="https://readthedocs.org/projects/otex/badge/?version=latest" alt="Documentation">
+  </a>
   <a href="https://doi.org/10.5281/zenodo.18428742">
     <img src="https://zenodo.org/badge/1145581288.svg" alt="DOI">
   </a>
+</p>
+
+<p align="center">
   <a href="https://pypi.org/project/otex/">
     <img src="https://img.shields.io/pypi/v/otex.svg" alt="PyPI">
   </a>
   <a href="https://pypi.org/project/otex/">
     <img src="https://img.shields.io/pypi/pyversions/otex.svg" alt="Python">
   </a>
+  <a href="https://pepy.tech/project/otex">
+    <img src="https://static.pepy.tech/badge/otex" alt="Downloads">
+  </a>
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License">
+  </a>
+  <a href="https://github.com/astral-sh/ruff">
+    <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json" alt="Ruff">
   </a>
 </p>
 
@@ -257,6 +272,8 @@ If you use OTEX in your research, please cite:
   doi = {10.5281/zenodo.18428742}
 }
 ```
+## Studies usign OTEX:
+- Soto Calvo M, and Lee HS., 2025. Ocean Thermal Energy Conversion (OTEC) Potential in Central American and Caribbean Regions: A Multicriteria Analysis for Optimal Sites. Applied Energy. 394: 126182. https://doi.org/10.1016/j.apenergy.2025.126182
 
 ## Contributing
 
@@ -271,3 +288,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <p align="center">
   Made with ❤️ for ocean energy research
 </p>
+
