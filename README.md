@@ -263,10 +263,10 @@ OTEX builds upon [pyOTEC](https://github.com/JKALanger/pyOTEC) by Langer et al. 
 If you use OTEX in your research, please cite:
 
 ```bibtex
-@software{otex2024,
+@software{otex2026,
   author = {Soto-Calvo, Manuel and OTEX Development Team},
   title = {OTEX: Ocean Thermal Energy eXchange},
-  year = {2024},
+  year = {2026},
   publisher = {GitHub},
   url = {https://github.com/msotocalvo/OTEX},
   doi = {10.5281/zenodo.18428742}
